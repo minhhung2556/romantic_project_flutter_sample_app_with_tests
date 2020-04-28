@@ -69,7 +69,6 @@ runIntegrationTests() {
 		echo "run test on $item"
 
 		if [[ $item == "chrome" ]]; then
-			~/chromedriver --port=4444
 			flutter drive --target=test_driver/app.dart --keep-app-running -d $item --browser-name=$item --profile
 		else
 			flutter drive --target=test_driver/app.dart --keep-app-running -d $item		
