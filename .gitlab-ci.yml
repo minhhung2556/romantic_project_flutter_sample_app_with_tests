@@ -12,8 +12,8 @@ before_script:
   - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
   - unzip sdk-tools-linux-3859397.zip -d android-sdk
   - cd android-sdk/tools
-  - ./android update sdk --no-ui
-  - ./sdkmanager "build-tools;28.0.3,platforms;android-28"
+  - ./bin/sdkmanager update sdk --no-ui
+  - ./bin/sdkmanager "build-tools;28.0.3,platforms;android-28"
   - cd ~
   - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
   - unzip gradle-5.6.2-all.zip -d gradle
