@@ -1,0 +1,9 @@
+image: "ubuntu:latest"
+
+before_script:
+  - apt-get update -qq
+  - apt-get install openjdk-8-jdk
+
+test:
+  script:
+    - java -version
