@@ -2,7 +2,7 @@ image: "ubuntu:latest"
 
 before_script:
   - apt-get update -qq
-  - yes | apt-get install openjdk-8-jdk
+  - apt-get install --yes --force-yes openjdk-8-jdk
   - java -version
   - curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
   - apt-get install gitlab-runner
