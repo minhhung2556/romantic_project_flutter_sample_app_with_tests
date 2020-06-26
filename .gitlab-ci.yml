@@ -18,7 +18,8 @@ before_script:
   - export PATH="$PATH:`pwd`/android-sdk/platform-tools"
   - export PATH="$PATH:`pwd`/android-sdk/tools/bin"
   - sdkmanager --list
-  - yes | sdkmanager "platform-tools" "platforms;android-28"
+  - yes | sdkmanager --licenses
+  - sdkmanager "platform-tools" "platforms;android-28"
   - adb devices
   - git clone https://github.com/flutter/flutter.git -b v1.12.13+hotfix.5
   - export PATH="$PATH:`pwd`/flutter/bin"
