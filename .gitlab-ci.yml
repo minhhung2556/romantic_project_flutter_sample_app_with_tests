@@ -9,6 +9,8 @@ before_script:
   - curl --version
   - apt-get install wget
   - apt-get install -y unzip
+  - apt-get install --yes --force-yes git
+  - git --version
   - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
   - unzip sdk-tools-linux-3859397.zip -d android-sdk
   - cd android-sdk/tools
@@ -18,9 +20,12 @@ before_script:
   - export PATH=$PATH:/opt/android-sdk/platform-tools
   - export PATH=$PATH:/opt/android-sdk/tools
   - cd ~
-  - apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
+  - adb devices
   - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
   - unzip gradle-5.6.2-all.zip -d gradle
+  - git clone https://github.com/flutter/flutter.git -b v1.12.13+hotfix.5
+  - export PATH="$PATH:`pwd`/flutter/bin"
+  - flutter doctor -v
 
 test:
   script:
