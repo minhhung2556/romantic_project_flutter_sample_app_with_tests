@@ -12,16 +12,15 @@ before_script:
   - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
   - unzip sdk-tools-linux-3859397.zip -d android-sdk
   - cd android-sdk/tools
-  - ./bin/sdkmanager update sdk --no-ui
-  - ./bin/sdkmanager "build-tools;28.0.3,platforms;android-28"
-  - cd ~
-  - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
-  - unzip gradle-5.6.2-all.zip -d gradle
-  - apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
+  - ./bin/sdkmanager --list
+  - ./bin/sdkmanager --update
   - export ANDROID_HOME=/opt/android-sdk
   - export PATH=$PATH:/opt/android-sdk/platform-tools
   - export PATH=$PATH:/opt/android-sdk/tools
-#  - export PATH=/opt/pradip/tools:/opt/pradip/tools/bin:$PATH
+  - cd ~
+  - apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
+  - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
+  - unzip gradle-5.6.2-all.zip -d gradle
 
 test:
   script:
