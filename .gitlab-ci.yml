@@ -8,9 +8,13 @@ before_script:
   - curl --version
   - apt-get install wget
   - apt-get install -y unzip
-  - wget https://dl.google.com/android/repository/sdk-tools-linux-6609375.zip
-  - unzip sdk-tools-linux-6609375.zip -d android-sdk
+  - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
+  - unzip sdk-tools-linux-3859397.zip -d android-sdk
   - ls
+  - ./android update sdk --no-ui
+  - ./sdkmanager "build-tools;28.0.3,platforms;android-28"
+  - wget https://services.gradle.org/distributions/gradle-4.1-all.zip
+  - unzip gradle-4.1-all.zip -d gradle
 #  - export PATH=/opt/pradip/tools:/opt/pradip/tools/bin:$PATH
 
 test:
