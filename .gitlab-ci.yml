@@ -18,10 +18,8 @@ before_script:
   - export PATH="$PATH:`pwd`/android-sdk/platform-tools"
   - export PATH="$PATH:`pwd`/android-sdk/tools/bin"
   - sdkmanager --list
-  - sdkmanager "platform-tools" "platforms;android-28"
+  - yes | sdkmanager "platform-tools" "platforms;android-28"
   - adb devices
-#  - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
-#  - unzip gradle-5.6.2-all.zip -d gradle
   - git clone https://github.com/flutter/flutter.git -b v1.12.13+hotfix.5
   - export PATH="$PATH:`pwd`/flutter/bin"
   - flutter doctor -v
