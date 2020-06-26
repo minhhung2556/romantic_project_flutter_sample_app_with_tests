@@ -14,9 +14,9 @@ before_script:
   - cd ~
   - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
   - unzip sdk-tools-linux-3859397.zip -d android-sdk
-  - export ANDROID_HOME=/opt/android-sdk
-  - export PATH=$PATH:/opt/android-sdk/platform-tools
-  - export PATH=$PATH:/opt/android-sdk/tools/bin
+  - export ANDROID_HOME="$PATH:`pwd`/android-sdk"
+  - export PATH="$PATH:`pwd`/android-sdk/platform-tools"
+  - export PATH="$PATH:`pwd`/android-sdk/tools/bin"
   - sdkmanager --list
   - sdkmanager "platform-tools" "platforms;android-28"
   - adb devices
