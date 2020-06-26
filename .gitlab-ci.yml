@@ -4,9 +4,11 @@ before_script:
   - apt-get update -qq
   - apt-get install --yes --force-yes openjdk-8-jdk
   - java -version
+  - apt-get install --yes --force-yes curl
+  - curl --version
   - curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh
-  - apt-get install gitlab-runner
+  - apt-get install --yes --force-yes gitlab-runner
 
 test:
   script:
-    - java -version
+    - echo done
