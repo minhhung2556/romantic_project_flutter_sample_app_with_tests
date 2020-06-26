@@ -11,18 +11,17 @@ before_script:
   - apt-get install -y unzip
   - apt-get install --yes --force-yes git
   - git --version
+  - cd ~
   - wget https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip
   - unzip sdk-tools-linux-3859397.zip -d android-sdk
-  - cd android-sdk/tools
-  - ./bin/sdkmanager --list
-  - ./bin/sdkmanager --update
   - export ANDROID_HOME=/opt/android-sdk
   - export PATH=$PATH:/opt/android-sdk/platform-tools
-  - export PATH=$PATH:/opt/android-sdk/tools
-  - cd ~
+  - export PATH=$PATH:/opt/android-sdk/tools/bin
+  - sdkmanager --list
+  - sdkmanager "platform-tools" "platforms;android-28"
   - adb devices
-  - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
-  - unzip gradle-5.6.2-all.zip -d gradle
+#  - wget https://services.gradle.org/distributions/gradle-5.6.2-all.zip
+#  - unzip gradle-5.6.2-all.zip -d gradle
   - git clone https://github.com/flutter/flutter.git -b v1.12.13+hotfix.5
   - export PATH="$PATH:`pwd`/flutter/bin"
   - flutter doctor -v
