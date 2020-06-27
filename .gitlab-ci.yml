@@ -24,8 +24,8 @@ before_script:
   - echo y | sdkmanager "build-tools;29.0.3"
   - echo y | sdkmanager "extras;android;m2repository"
   - echo y | sdkmanager "extras;google;m2repository"
-  - echo y | sdkmanager "system-images;android-29;google_apis;x8"
-  - avdmanager create avd -n Android29 -k "system-images;android-29;google_apis;x8"
+  - echo y | sdkmanager "system-images;android-29;default;x86"
+  - avdmanager create avd -n Android29 -k "system-images;android-29;default;x86"
   - emulator -avd Android29 -netdelay none -netspeed full -force-32bit
   - git clone https://github.com/flutter/flutter.git -b v1.12.13+hotfix.5
   - export PATH="$PATH:`pwd`/flutter/bin"
