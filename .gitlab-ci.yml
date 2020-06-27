@@ -18,6 +18,7 @@ before_script:
   - export PATH="$PATH:`pwd`/android-sdk/platform-tools"
   - export PATH="$PATH:`pwd`/android-sdk/tools/bin"
   - export PATH="$PATH:`pwd`/android-sdk/emulator"
+  - export PATH="$PATH:`pwd`/android-sdk/tools"
   - echo y | sdkmanager "platforms;android-29"
   - echo y | sdkmanager "platform-tools"
   - echo y | sdkmanager "build-tools;29.0.3"
