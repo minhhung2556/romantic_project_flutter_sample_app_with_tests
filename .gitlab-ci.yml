@@ -22,9 +22,7 @@ before_script:
   - echo y | sdkmanager "build-tools;29.0.3"
   - echo y | sdkmanager "extras;android;m2repository"
   - echo y | sdkmanager "extras;google;m2repository"
-  - echo y | sdkmanager "system-images;android-29;google_apis_playstore;x86_64"
-  - echo no | avdmanager create avd -n android29 -k "system-images;android-29;google_apis_playstore;x86_64"
-  - emulator -avd android29 -netdelay none -netspeed full
+  - emulator -avd Nexus_5X_API_23 -netdelay none -netspeed full
   - git clone https://github.com/flutter/flutter.git -b v1.12.13+hotfix.5
   - export PATH="$PATH:`pwd`/flutter/bin"
   - flutter doctor -v
