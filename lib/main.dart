@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttersampleappwithtests/home_page.dart';
+
+import 'animation_demo.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage.newInstance(),
+//      home: HomePage.newInstance(),
+      home: AnimationDemo(),
     );
   }
 }
