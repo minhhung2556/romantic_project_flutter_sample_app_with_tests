@@ -7,9 +7,25 @@ main() {
     expect(bloc.initialState.count, 0);
 
     bloc.increase();
-    expect(bloc.latestState.count, 1);
+    expect(bloc.state.count, 1);
 
     bloc.decrease();
-    expect(bloc.latestState.count, 0);
+    expect(bloc.state.count, 0);
+  });
+
+  test('HomePageBloc', () {
+    final bloc = HomePageBloc()..init();
+    expect(bloc.initialState.count, 0);
+
+    bloc.increase();
+    expect(bloc.state.count, 1);
+  });
+
+  test('HomePageBloc', () {
+    final bloc = HomePageBloc()..init();
+    expect(bloc.initialState.count, 0);
+
+    bloc.decrease();
+    expect(bloc.state.count, -1);
   });
 }

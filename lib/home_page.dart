@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:lightweight_bloc/lightweight_bloc.dart';
 
 import 'home_page_bloc.dart';
+import 'home_page_state.dart';
 import 'keys.dart';
 
 class _HomePageState extends State<HomePage> {
